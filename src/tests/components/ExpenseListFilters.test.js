@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { ExpenseListFilters } from '../../components/ExpenseListFilters';
 import moment from 'moment';
-import expenses from '../fixtures/expenses';
 import { filters, altFilters } from '../fixtures/filters';
 
 let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper;
@@ -70,7 +69,6 @@ test('should handle date changes', () => {
 });
 
 test('should handle date focus change', () => {
-    const calendarFocused = 'endDate'
     wrapper.find('DateRangePicker').prop('onFocusChange')('startDate');
     expect(wrapper.state('calendarFocused')).toEqual('startDate')
 });
